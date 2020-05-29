@@ -1,4 +1,4 @@
-package com.duky8n;
+package com.duky8n.flashCard;
 
 import java.awt.*;
 import javax.swing.*;
