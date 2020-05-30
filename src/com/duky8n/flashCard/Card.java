@@ -3,8 +3,8 @@ package com.duky8n.flashCard;
 import java.awt.*;
 import javax.swing.*;
 
-public class Frame1 extends JFrame {
-	public Frame1() {
+public class Card extends JFrame {
+	public Card() {
 		this.setTitle("FlashCard");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
@@ -39,7 +39,8 @@ public class Frame1 extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		new Frame1();
+		new Card();
 	}
 
 }
+
