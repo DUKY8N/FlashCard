@@ -83,6 +83,7 @@ public class CardTable extends JFrame {
 		fileMenu.add(new JMenuItem("단어장 단어 추가"));
 		optionMenu.add("위, 아래 바꾸기");
 		optionMenu.add("숙련도 초기화");
+		optionMenu.add("연습 모드");
 
 	}
 
@@ -105,8 +106,25 @@ public class CardTable extends JFrame {
 	public void changeCount3(int num1) {
 		count3.setText("연속: " + num1);
 	}
+	
+	public void changeEachLine() {
+		String temp = this.line1.getText();
+		this.changeLine1(this.line2.getText());
+		this.changeLine2(temp);
+	}
+	
+	public void hideLine2() {
+		line2.setVisible(false);
+	}
+
+	public void showLine2() {
+		line2.setVisible(true);
+	}
 
 	public static void main(String[] args) {
 		CardTable c = new CardTable();
+		c.changeEachLine();
+
+		c.hideLine2();
 	}
 }
