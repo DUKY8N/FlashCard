@@ -14,6 +14,13 @@ public class CardTable extends JFrame {
 	JLabel count2 = new JLabel("전채: 0/0");
 	JLabel count3 = new JLabel("연속: 0");
 
+	///// BUTTONS /////
+
+	public JButton reButton = new JButton("다시");
+	public JButton rightButton = new JButton("알맞음");
+	public JButton easyButton = new JButton("쉬움");
+	public JButton checkAnswerButton = new JButton("정답 확인");
+
 	public CardTable() {
 
 		///// FRAME SETTING /////
@@ -62,13 +69,9 @@ public class CardTable extends JFrame {
 
 		///// BUTTONS /////
 
-		JButton reButton = new JButton("다시");
+		btnsPanel.add(checkAnswerButton); // checkAnswerButton Button을 btnsPanel에 첨가
 		btnsPanel.add(reButton); // reButton Button을 btnsPanel에 첨가
-
-		JButton rightButton = new JButton("알맞음");
 		btnsPanel.add(rightButton); // rightButton Button을 btnsPanel에 첨가
-
-		JButton easyButton = new JButton("쉬움");
 		btnsPanel.add(easyButton); // easyButton Button을 btnsPanel에 첨가
 
 		///// MENU BAR /////
@@ -106,25 +109,41 @@ public class CardTable extends JFrame {
 	public void changeCount3(int num1) {
 		count3.setText("연속: " + num1);
 	}
-	
+
 	public void changeEachLine() {
 		String temp = this.line1.getText();
 		this.changeLine1(this.line2.getText());
 		this.changeLine2(temp);
 	}
-	
+
 	public void hideLine2() {
 		line2.setVisible(false);
+	}
+
+	public void hideLearnButton() {
+		reButton.setVisible(false);
+		rightButton.setVisible(false);
+		easyButton.setVisible(false);
+
+	}
+	
+	public void hideAnswerCheckButton() {
+		checkAnswerButton.setVisible(false);
 	}
 
 	public void showLine2() {
 		line2.setVisible(true);
 	}
 
-	public static void main(String[] args) {
-		CardTable c = new CardTable();
-		c.changeEachLine();
+	public void showLearnButton() {
+		reButton.setVisible(true);
+		rightButton.setVisible(true);
+		easyButton.setVisible(true);
 
-		c.hideLine2();
 	}
+	
+	public void showAnswerCheckButton() {
+		checkAnswerButton.setVisible(true);
+	}
+
 }
