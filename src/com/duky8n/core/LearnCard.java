@@ -7,9 +7,9 @@ import com.duky8n.ui.CardTable;
 
 public class LearnCard {
 	CardTable cardTable = new CardTable();
+	ReadFile readFile = new ReadFile();
 
 	public LearnCard() {
-		cardTable.hideLine2();
 		cardTable.hideLearnButton();
 		this.cardTable.checkAnswerButton.addActionListener( new ActionListener() {
 
@@ -28,6 +28,9 @@ public class LearnCard {
 				cardTable.showAnswerCheckButton();
 				cardTable.hideLearnButton();
 				cardTable.hideLine2();
+				readFile.nextWord();
+				cardTable.changeLine1(readFile.getLine1());
+				cardTable.changeLine2(readFile.getLine2());
 			}
 		});
 
@@ -38,6 +41,9 @@ public class LearnCard {
 				cardTable.showAnswerCheckButton();
 				cardTable.hideLearnButton();
 				cardTable.hideLine2();
+				readFile.nextWord();
+				cardTable.changeLine1(readFile.getLine1());
+				cardTable.changeLine2(readFile.getLine2());
 			}
 		});
 
@@ -48,14 +54,38 @@ public class LearnCard {
 				cardTable.showAnswerCheckButton();
 				cardTable.hideLearnButton();
 				cardTable.hideLine2();
+				readFile.nextWord();
+				cardTable.changeLine1(readFile.getLine1());
+				cardTable.changeLine2(readFile.getLine2());
 			}
 		});
-	}
+		
+		this.cardTable.swapLines.addActionListener( new ActionListener() {
 
-	public static void main(String[] args) {
-		LearnCard lc = new LearnCard();
-		lc.cardTable.hideLearnButton();
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				cardTable.changeEachLine();
+				
+			}
+		
+		});
 
+		this.cardTable.openVocabulary.addActionListener( new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				readFile.run();
+				cardTable.changeLine1(readFile.getLine1());
+				cardTable.changeLine2(readFile.getLine2());
+				cardTable.hideLine2();
+				cardTable.hideLearnButton();
+				cardTable.showAnswerCheckButton();
+				
+				
+			}
+		
+		});
+		
 	}
 
 }

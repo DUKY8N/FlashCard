@@ -20,6 +20,11 @@ public class CardTable extends JFrame {
 	public JButton rightButton = new JButton("알맞음");
 	public JButton easyButton = new JButton("쉬움");
 	public JButton checkAnswerButton = new JButton("정답 확인");
+	
+	///// MENU BAR /////
+	
+	public JMenuItem swapLines = new JMenuItem("위 아래 바꾸기");
+	public JMenuItem openVocabulary = new JMenuItem("단어장 열기");
 
 	public CardTable() {
 
@@ -74,6 +79,11 @@ public class CardTable extends JFrame {
 		btnsPanel.add(rightButton); // rightButton Button을 btnsPanel에 첨가
 		btnsPanel.add(easyButton); // easyButton Button을 btnsPanel에 첨가
 
+		reButton.setVisible(false);
+		rightButton.setVisible(false);
+		easyButton.setVisible(false);
+		checkAnswerButton.setVisible(false);
+
 		///// MENU BAR /////
 
 		JMenuBar mb = new JMenuBar(); // 메뉴바 생성
@@ -82,9 +92,9 @@ public class CardTable extends JFrame {
 		mb.add(fileMenu);
 		mb.add(optionMenu);
 		this.setJMenuBar(mb); // Main Frame에 메뉴바 붙임
-		fileMenu.add(new JMenuItem("단어장 열기"));
+		fileMenu.add(openVocabulary);
 		fileMenu.add(new JMenuItem("단어장 단어 추가"));
-		optionMenu.add("위, 아래 바꾸기");
+		optionMenu.add(swapLines);
 		optionMenu.add("숙련도 초기화");
 		optionMenu.add("연습 모드");
 
