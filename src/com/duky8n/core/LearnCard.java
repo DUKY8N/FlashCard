@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import com.duky8n.ui.CardTable;
 
-public class LearnCard {
+public class LearnCard extends Thread {
 	CardTable cardTable = new CardTable();
 	ReadFile readFile = new ReadFile();
 	WordDB wordDB = new WordDB();
@@ -75,12 +75,9 @@ public class LearnCard {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				wordDB.count = 0;
 				readFile.run();
-				cardTable.changeLine1(wordDB.getLine1());
-				cardTable.changeLine2(wordDB.getLine2());
-				cardTable.hideLine2();
-				cardTable.hideLearnButton();
-				cardTable.showAnswerCheckButton();
+				cardTable.refreshButton.setVisible(true);
 				
 				
 			}
@@ -93,6 +90,20 @@ public class LearnCard {
 			public void actionPerformed(ActionEvent e) {
 				new PracticeMode();
 				
+			}
+		
+		});
+
+		this.cardTable.refreshButton.addActionListener( new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				cardTable.changeLine1(wordDB.getLine1());
+				cardTable.changeLine2(wordDB.getLine2());
+				cardTable.hideLine2();
+				cardTable.hideLearnButton();
+				cardTable.showAnswerCheckButton();
+				cardTable.refreshButton.setVisible(false);
 			}
 		
 		});

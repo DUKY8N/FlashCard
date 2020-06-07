@@ -20,6 +20,7 @@ public class CardTable extends JFrame {
 	public JButton rightButton = new JButton("알맞음");
 	public JButton easyButton = new JButton("쉬움");
 	public JButton checkAnswerButton = new JButton("정답 확인");
+	public JButton refreshButton = new JButton("새로 고침");
 	
 	///// MENU BAR /////
 	
@@ -79,8 +80,10 @@ public class CardTable extends JFrame {
 		btnsPanel.add(reButton); // reButton Button을 btnsPanel에 첨가
 		btnsPanel.add(rightButton); // rightButton Button을 btnsPanel에 첨가
 		btnsPanel.add(easyButton); // easyButton Button을 btnsPanel에 첨가
+		btnsPanel.add(refreshButton);
 
 		reButton.setVisible(false);
+		refreshButton.setVisible(false);
 		rightButton.setVisible(false);
 		easyButton.setVisible(false);
 		checkAnswerButton.setVisible(false);
