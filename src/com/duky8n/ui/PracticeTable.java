@@ -22,7 +22,7 @@ public class PracticeTable extends JFrame {
 		///// FRAME SETTING /////
 
 		this.setTitle("FlashCard"); // frame 제목
-		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); // X 버튼을 누를시 프로세스 종료
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		this.setVisible(true); // frame을 보여줄지의 여부
 		this.setSize(450, 200); // frame size
 
