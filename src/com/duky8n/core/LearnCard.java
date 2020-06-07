@@ -45,6 +45,7 @@ public class LearnCard extends Thread {
 				wordDB.nextWord();
 				cardTable.changeLine1(wordDB.getLine1());
 				cardTable.changeLine2(wordDB.getLine2());
+				cardTable.changeCount2(wordDB.count+1, WordDB.wordNum);
 			}
 		});
 
@@ -78,7 +79,10 @@ public class LearnCard extends Thread {
 				wordDB.count = 0;
 				readFile.run();
 				cardTable.refreshButton.setVisible(true);
-				
+				cardTable.checkAnswerButton.setVisible(false);
+				cardTable.reButton.setVisible(false);
+				cardTable.rightButton.setVisible(false);
+				cardTable.easyButton.setVisible(false);
 				
 			}
 		
@@ -104,6 +108,7 @@ public class LearnCard extends Thread {
 				cardTable.hideLearnButton();
 				cardTable.showAnswerCheckButton();
 				cardTable.refreshButton.setVisible(false);
+				cardTable.changeCount2(wordDB.count+1, WordDB.wordNum);
 			}
 		
 		});

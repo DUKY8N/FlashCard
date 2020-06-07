@@ -20,6 +20,7 @@ public class PracticeMode {
 				wordDB.nextWord();
 				practiceTable.changeLine1(wordDB.getLine1());
 				practiceTable.changeLine2(wordDB.getLine2());
+				practiceTable.changeCount(wordDB.count+1, WordDB.wordNum);
 				
 			}
 		

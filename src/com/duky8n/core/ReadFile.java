@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 
 import com.duky8n.ui.ChooseFileTable;
 
-public class ReadFile extends Thread {
+public class ReadFile {
 	ChooseFileTable chooseFileTable = new ChooseFileTable();
 
 	ReadFile() {
@@ -20,14 +20,14 @@ public class ReadFile extends Thread {
 
 	public void run() {
 		chooseFileTable.setVisible(true);
-		WordDB.firstWord.clear();
-		WordDB.secondWord.clear();
-		WordDB.secondWord.clear();
-		WordDB.wordNum = 0;
 		chooseFileTable.enterPathButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				WordDB.firstWord.clear();
+				WordDB.secondWord.clear();
+				WordDB.secondWord.clear();
+				WordDB.wordNum = 0;
 				try {
 					System.out.println("enter");
 					Path path = Paths.get(chooseFileTable.pathTextField.getText());
