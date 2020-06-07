@@ -25,6 +25,7 @@ public class CardTable extends JFrame {
 	
 	public JMenuItem swapLines = new JMenuItem("위 아래 바꾸기");
 	public JMenuItem openVocabulary = new JMenuItem("단어장 열기");
+	public JMenuItem learnMode = new JMenuItem("연습 모드");
 
 	public CardTable() {
 
@@ -96,7 +97,7 @@ public class CardTable extends JFrame {
 		fileMenu.add(new JMenuItem("단어장 단어 추가"));
 		optionMenu.add(swapLines);
 		optionMenu.add("숙련도 초기화");
-		optionMenu.add("연습 모드");
+		optionMenu.add(learnMode);
 
 	}
 

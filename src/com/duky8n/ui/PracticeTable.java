@@ -8,16 +8,21 @@ public class PracticeTable extends JFrame {
 
 	///// LABELS /////
 
-	JLabel line1 = new JLabel("Welcome!");
-	JLabel line2 = new JLabel("단어장을 선택해 주세요.");
-	JLabel count1 = new JLabel("0/0");
+	public JLabel line1 = new JLabel("Welcome!");
+	public JLabel line2 = new JLabel("단어장을 선택해 주세요.");
+	public JLabel count1 = new JLabel("0/0");
+
+	///// BUTTONS /////
+
+	public JButton backButton = new JButton("이전");
+	public JButton nextButton = new JButton("다음");
 
 	public PracticeTable() {
 
 		///// FRAME SETTING /////
 
 		this.setTitle("FlashCard"); // frame 제목
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // X 버튼을 누를시 프로세스 종료
+		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE); // X 버튼을 누를시 프로세스 종료
 		this.setVisible(true); // frame을 보여줄지의 여부
 		this.setSize(450, 200); // frame size
 
@@ -51,11 +56,8 @@ public class PracticeTable extends JFrame {
 
 		///// BUTTONS /////
 
-		JButton backButton = new JButton("이전");
-		bigPanel.add(backButton, "East");
-
-		JButton nextButton = new JButton("다음");
-		bigPanel.add(nextButton, "West");
+		bigPanel.add(backButton, "West");
+		bigPanel.add(nextButton, "East");
 
 	}
 

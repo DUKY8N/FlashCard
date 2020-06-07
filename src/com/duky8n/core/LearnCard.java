@@ -8,6 +8,7 @@ import com.duky8n.ui.CardTable;
 public class LearnCard {
 	CardTable cardTable = new CardTable();
 	ReadFile readFile = new ReadFile();
+	WordDB wordDB = new WordDB();
 
 	public LearnCard() {
 		cardTable.hideLearnButton();
@@ -28,9 +29,9 @@ public class LearnCard {
 				cardTable.showAnswerCheckButton();
 				cardTable.hideLearnButton();
 				cardTable.hideLine2();
-				readFile.nextWord();
-				cardTable.changeLine1(readFile.getLine1());
-				cardTable.changeLine2(readFile.getLine2());
+				wordDB.nextWord();
+				cardTable.changeLine1(wordDB.getLine1());
+				cardTable.changeLine2(wordDB.getLine2());
 			}
 		});
 
@@ -41,9 +42,9 @@ public class LearnCard {
 				cardTable.showAnswerCheckButton();
 				cardTable.hideLearnButton();
 				cardTable.hideLine2();
-				readFile.nextWord();
-				cardTable.changeLine1(readFile.getLine1());
-				cardTable.changeLine2(readFile.getLine2());
+				wordDB.nextWord();
+				cardTable.changeLine1(wordDB.getLine1());
+				cardTable.changeLine2(wordDB.getLine2());
 			}
 		});
 
@@ -54,9 +55,9 @@ public class LearnCard {
 				cardTable.showAnswerCheckButton();
 				cardTable.hideLearnButton();
 				cardTable.hideLine2();
-				readFile.nextWord();
-				cardTable.changeLine1(readFile.getLine1());
-				cardTable.changeLine2(readFile.getLine2());
+				wordDB.nextWord();
+				cardTable.changeLine1(wordDB.getLine1());
+				cardTable.changeLine2(wordDB.getLine2());
 			}
 		});
 		
@@ -75,8 +76,8 @@ public class LearnCard {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				readFile.run();
-				cardTable.changeLine1(readFile.getLine1());
-				cardTable.changeLine2(readFile.getLine2());
+				cardTable.changeLine1(wordDB.getLine1());
+				cardTable.changeLine2(wordDB.getLine2());
 				cardTable.hideLine2();
 				cardTable.hideLearnButton();
 				cardTable.showAnswerCheckButton();
@@ -86,6 +87,15 @@ public class LearnCard {
 		
 		});
 		
+		this.cardTable.learnMode.addActionListener( new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new PracticeMode();
+				
+			}
+		
+		});
 	}
 
 }

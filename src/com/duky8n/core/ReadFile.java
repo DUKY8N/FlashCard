@@ -5,15 +5,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 
 public class ReadFile {
 	Path path = Paths.get("test.txt");
-	public ArrayList<String> firstWord = new ArrayList<String>();
-	public ArrayList<String> secondWord = new ArrayList<String>();
-	public ArrayList<Integer> correctNum = new ArrayList<Integer>();
-	public int wordNum = 0;
-	int count;
 	
 	ReadFile() {
 
@@ -21,17 +15,15 @@ public class ReadFile {
 
 	public void run() {
 		try {
-			count = 0;
-
 			BufferedReader reader = Files.newBufferedReader(path);
 			String line = reader.readLine();
 			while (line != null) {
 				int idx = line.indexOf(":");
 
-				this.firstWord.add(line.substring(0, idx));
-				this.secondWord.add(line.substring(idx+1));
-				this.correctNum.add(0);
-				this.wordNum++;
+				WordDB.firstWord.add(line.substring(0, idx));
+				WordDB.secondWord.add(line.substring(idx+1));
+				WordDB.correctNum.add(0);
+				WordDB.wordNum++;
 
 				line = reader.readLine();
 			}
@@ -41,16 +33,5 @@ public class ReadFile {
 		
 	}
 	
-	public String getLine1() {
-		return this.firstWord.get(count);
-	}
-
-	public String getLine2() {
-		return this.secondWord.get(count);
-	}
-	
-	public void nextWord() {
-		if (count < wordNum-1) count++;
-	}
 
 }
