@@ -9,47 +9,47 @@ public class PracticeTable extends JFrame {
 	///// LABELS /////
 
 	public JLabel line1 = new JLabel("Welcome!");
-	public JLabel line2 = new JLabel("ë‹¨ì–´ì¥ì„ ì„ íƒí•´ ì£¼ì„¸ìš”.");
+	public JLabel line2 = new JLabel("´Ü¾îÀåÀ» ¼±ÅÃÇØ ÁÖ¼¼¿ä.");
 	public JLabel count1 = new JLabel("0/0");
 
 	///// BUTTONS /////
 
-	public JButton backButton = new JButton("ì´ì „");
-	public JButton nextButton = new JButton("ë‹¤ìŒ");
+	public JButton backButton = new JButton("ÀÌÀü");
+	public JButton nextButton = new JButton("´ÙÀ½");
 
 	public PracticeTable() {
 
 		///// FRAME SETTING /////
 
-		this.setTitle("FlashCard"); // frame ì œëª©
+		this.setTitle("FlashCard"); // frame Á¦¸ñ
 		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		this.setVisible(true); // frameì„ ë³´ì—¬ì¤„ì§€ì˜ ì—¬ë¶€
+		this.setVisible(true); // frameÀ» º¸¿©ÁÙÁöÀÇ ¿©ºÎ
 		this.setSize(450, 200); // frame size
 
 		///// PANELS /////
 
-		// ê¸°ë‘¥ì´ ë  íŒ¨ë„ //
+		// ±âµÕÀÌ µÉ ÆĞ³Î //
 		Container bigPanel = new Container();
-		bigPanel.setLayout(new BorderLayout()); // ë™ì„œë‚¨ë¶ ë ˆì´ì•„ì›ƒ
-		this.add(bigPanel); // bigPanelì„ Frameì— ì²¨ê°€
+		bigPanel.setLayout(new BorderLayout()); // µ¿¼­³²ºÏ ·¹ÀÌ¾Æ¿ô
+		this.add(bigPanel); // bigPanelÀ» Frame¿¡ Ã·°¡
 
-		// ë¼ë²¨ë“¤ì„ ë‹´ì„ íŒ¨ë„ //
+		// ¶óº§µéÀ» ´ãÀ» ÆĞ³Î //
 		JPanel labelsPanel = new JPanel();
-		labelsPanel.setLayout(new BorderLayout()); // ë™ì„œë‚¨ë¶ ë ˆì´ì•„ì›ƒ
+		labelsPanel.setLayout(new BorderLayout()); // µ¿¼­³²ºÏ ·¹ÀÌ¾Æ¿ô
 		JPanel contentsPanel = new JPanel();
-		contentsPanel.setLayout(new GridLayout(2, 1)); // 2í–‰, 1ì—´ ë ˆì´ì•„ì›ƒ
-		bigPanel.add(labelsPanel, "Center"); // labelsPanelì„ bigPanel(Center)ì— ì²¨ê°€
+		contentsPanel.setLayout(new GridLayout(2, 1)); // 2Çà, 1¿­ ·¹ÀÌ¾Æ¿ô
+		bigPanel.add(labelsPanel, "Center"); // labelsPanelÀ» bigPanel(Center)¿¡ Ã·°¡
 		labelsPanel.add(contentsPanel, "Center");
 
 		///// LABELS /////
 
-		line1.setHorizontalAlignment(JLabel.CENTER); // labelì„ centerìœ„ì¹˜ì— ì§€ì •
-		line1.setFont(new Font("SanSerif", Font.BOLD, 30)); // labelì˜ ê¸€ê¼´ ë³€ê²½
-		contentsPanel.add(line1); // line1 labelì„ labelsPanelì— ì²¨ê°€
+		line1.setHorizontalAlignment(JLabel.CENTER); // labelÀ» centerÀ§Ä¡¿¡ ÁöÁ¤
+		line1.setFont(new Font("SanSerif", Font.BOLD, 30)); // labelÀÇ ±Û²Ã º¯°æ
+		contentsPanel.add(line1); // line1 labelÀ» labelsPanel¿¡ Ã·°¡
 
-		line2.setHorizontalAlignment(JLabel.CENTER); // labelì„ centerìœ„ì¹˜ì— ì§€ì •
-		line2.setFont(new Font("SanSerif", Font.BOLD, 30)); // labelì˜ ê¸€ê¼´ ë³€ê²½
-		contentsPanel.add(line2); // line2 labelì„ labelsPanelì— ì²¨ê°€
+		line2.setHorizontalAlignment(JLabel.CENTER); // labelÀ» centerÀ§Ä¡¿¡ ÁöÁ¤
+		line2.setFont(new Font("SanSerif", Font.BOLD, 30)); // labelÀÇ ±Û²Ã º¯°æ
+		contentsPanel.add(line2); // line2 labelÀ» labelsPanel¿¡ Ã·°¡
 		
 		count1.setHorizontalAlignment(JLabel.CENTER);
 		labelsPanel.add(count1, "South");

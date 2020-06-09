@@ -47,7 +47,7 @@ public class ReadFile {
 					}
 				} catch (IOException e1) {
 					System.out.println("Could not read the file.");
-					chooseFileTable.enterPathButton.setText("ë‹¨ì–´ì¥ ì—†ìŒ");
+					chooseFileTable.enterPathButton.setText("´Ü¾îÀå ¾øÀ½");
 
 				}
 

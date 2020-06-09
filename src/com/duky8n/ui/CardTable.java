@@ -9,77 +9,77 @@ public class CardTable extends JFrame {
 	///// LABELS /////
 
 	JLabel line1 = new JLabel("Welcome!");
-	JLabel line2 = new JLabel("ë‹¨ì–´ì¥ì„ ì„ íƒí•´ ì£¼ì„¸ìš”.");
-	JLabel count1 = new JLabel("í˜„ì¬: 0/0");
-	JLabel count2 = new JLabel("ì „ì±„: 0/0");
-	JLabel count3 = new JLabel("ì—°ì†: 0");
+	JLabel line2 = new JLabel("´Ü¾îÀåÀ» ¼±ÅÃÇØ ÁÖ¼¼¿ä.");
+	JLabel count1 = new JLabel("ÇöÀç: 0/0");
+	JLabel count2 = new JLabel("ÀüÃ¤: 0/0");
+	JLabel count3 = new JLabel("¿¬¼Ó: 0");
 
 	///// BUTTONS /////
 
-	public JButton reButton = new JButton("ë‹¤ì‹œ");
-	public JButton rightButton = new JButton("ì•Œë§ìŒ");
-	public JButton easyButton = new JButton("ì‰¬ì›€");
-	public JButton checkAnswerButton = new JButton("ì •ë‹µ í™•ì¸");
-	public JButton refreshButton = new JButton("ìƒˆë¡œ ê³ ì¹¨");
+	public JButton reButton = new JButton("´Ù½Ã");
+	public JButton rightButton = new JButton("¾Ë¸ÂÀ½");
+	public JButton easyButton = new JButton("½¬¿ò");
+	public JButton checkAnswerButton = new JButton("Á¤´ä È®ÀÎ");
+	public JButton refreshButton = new JButton("»õ·Î °íÄ§");
 	
 	///// MENU BAR /////
 	
-	public JMenuItem swapLines = new JMenuItem("ìœ„ ì•„ë˜ ë°”ê¾¸ê¸°");
-	public JMenuItem openVocabulary = new JMenuItem("ë‹¨ì–´ì¥ ì—´ê¸°");
-	public JMenuItem learnMode = new JMenuItem("ì—°ìŠµ ëª¨ë“œ");
+	public JMenuItem swapLines = new JMenuItem("À§ ¾Æ·¡ ¹Ù²Ù±â");
+	public JMenuItem openVocabulary = new JMenuItem("´Ü¾îÀå ¿­±â");
+	public JMenuItem learnMode = new JMenuItem("¿¬½À ¸ğµå");
 
 	public CardTable() {
 
 		///// FRAME SETTING /////
 
-		this.setTitle("FlashCard"); // frame ì œëª©
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // X ë²„íŠ¼ì„ ëˆ„ë¥¼ì‹œ í”„ë¡œì„¸ìŠ¤ ì¢…ë£Œ
-		this.setVisible(true); // frameì„ ë³´ì—¬ì¤„ì§€ì˜ ì—¬ë¶€
+		this.setTitle("FlashCard"); // frame Á¦¸ñ
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // X ¹öÆ°À» ´©¸¦½Ã ÇÁ·Î¼¼½º Á¾·á
+		this.setVisible(true); // frameÀ» º¸¿©ÁÙÁöÀÇ ¿©ºÎ
 		this.setSize(450, 300); // frame size
 
 		///// PANELS /////
 
-		// ê¸°ë‘¥ì´ ë  íŒ¨ë„ //
+		// ±âµÕÀÌ µÉ ÆĞ³Î //
 		Container bigPanel = new Container();
-		bigPanel.setLayout(new BorderLayout()); // ë™ì„œë‚¨ë¶ ë ˆì´ì•„ì›ƒ
-		this.add(bigPanel); // bigPanelì„ Frameì— ì²¨ê°€
+		bigPanel.setLayout(new BorderLayout()); // µ¿¼­³²ºÏ ·¹ÀÌ¾Æ¿ô
+		this.add(bigPanel); // bigPanelÀ» Frame¿¡ Ã·°¡
 
-		// ë¼ë²¨ë“¤ì„ ë‹´ì„ íŒ¨ë„ //
+		// ¶óº§µéÀ» ´ãÀ» ÆĞ³Î //
 		JPanel labelsPanel = new JPanel();
-		labelsPanel.setLayout(new GridLayout(2, 1)); // 2í–‰, 1ì—´ ë ˆì´ì•„ì›ƒ
-		bigPanel.add(labelsPanel, "Center"); // labelsPanelì„ bigPanel(Center)ì— ì²¨ê°€
+		labelsPanel.setLayout(new GridLayout(2, 1)); // 2Çà, 1¿­ ·¹ÀÌ¾Æ¿ô
+		bigPanel.add(labelsPanel, "Center"); // labelsPanelÀ» bigPanel(Center)¿¡ Ã·°¡
 
 		JPanel detailLabelsPanel = new JPanel();
 		detailLabelsPanel.setLayout(new GridLayout(1, 2));
 		bigPanel.add(detailLabelsPanel, "North");
 
-		// ë²„íŠ¼ë“¤ì„ ë‹´ì„ íŒ¨ë„ //
+		// ¹öÆ°µéÀ» ´ãÀ» ÆĞ³Î //
 		JPanel btnsPanel = new JPanel();
-		bigPanel.add(btnsPanel, "South"); // btnsPanelì„ bigPanel(South)ì— ì²¨ê°€
+		bigPanel.add(btnsPanel, "South"); // btnsPanelÀ» bigPanel(South)¿¡ Ã·°¡
 
 		///// LABELS /////
 
-		line1.setHorizontalAlignment(JLabel.CENTER); // labelì„ centerìœ„ì¹˜ì— ì§€ì •
-		line1.setFont(new Font("SanSerif", Font.BOLD, 30)); // labelì˜ ê¸€ê¼´ ë³€ê²½
-		labelsPanel.add(line1); // line1 labelì„ labelsPanelì— ì²¨ê°€
+		line1.setHorizontalAlignment(JLabel.CENTER); // labelÀ» centerÀ§Ä¡¿¡ ÁöÁ¤
+		line1.setFont(new Font("SanSerif", Font.BOLD, 30)); // labelÀÇ ±Û²Ã º¯°æ
+		labelsPanel.add(line1); // line1 labelÀ» labelsPanel¿¡ Ã·°¡
 
-		line2.setHorizontalAlignment(JLabel.CENTER); // labelì„ centerìœ„ì¹˜ì— ì§€ì •
-		line2.setFont(new Font("SanSerif", Font.BOLD, 30)); // labelì˜ ê¸€ê¼´ ë³€ê²½
-		labelsPanel.add(line2); // line2 labelì„ labelsPanelì— ì²¨ê°€
+		line2.setHorizontalAlignment(JLabel.CENTER); // labelÀ» centerÀ§Ä¡¿¡ ÁöÁ¤
+		line2.setFont(new Font("SanSerif", Font.BOLD, 30)); // labelÀÇ ±Û²Ã º¯°æ
+		labelsPanel.add(line2); // line2 labelÀ» labelsPanel¿¡ Ã·°¡
 
-		count1.setHorizontalAlignment(JLabel.LEFT); // labelì„ centerìœ„ì¹˜ì— ì§€ì •
+		count1.setHorizontalAlignment(JLabel.LEFT); // labelÀ» centerÀ§Ä¡¿¡ ÁöÁ¤
 		detailLabelsPanel.add(count1);
-		count2.setHorizontalAlignment(JLabel.CENTER); // labelì„ centerìœ„ì¹˜ì— ì§€ì •
+		count2.setHorizontalAlignment(JLabel.CENTER); // labelÀ» centerÀ§Ä¡¿¡ ÁöÁ¤
 		detailLabelsPanel.add(count2);
-		count3.setHorizontalAlignment(JLabel.RIGHT); // labelì„ centerìœ„ì¹˜ì— ì§€ì •
+		count3.setHorizontalAlignment(JLabel.RIGHT); // labelÀ» centerÀ§Ä¡¿¡ ÁöÁ¤
 		detailLabelsPanel.add(count3);
 
 		///// BUTTONS /////
 
-		btnsPanel.add(checkAnswerButton); // checkAnswerButton Buttonì„ btnsPanelì— ì²¨ê°€
-		btnsPanel.add(reButton); // reButton Buttonì„ btnsPanelì— ì²¨ê°€
-		btnsPanel.add(rightButton); // rightButton Buttonì„ btnsPanelì— ì²¨ê°€
-		btnsPanel.add(easyButton); // easyButton Buttonì„ btnsPanelì— ì²¨ê°€
+		btnsPanel.add(checkAnswerButton); // checkAnswerButton ButtonÀ» btnsPanel¿¡ Ã·°¡
+		btnsPanel.add(reButton); // reButton ButtonÀ» btnsPanel¿¡ Ã·°¡
+		btnsPanel.add(rightButton); // rightButton ButtonÀ» btnsPanel¿¡ Ã·°¡
+		btnsPanel.add(easyButton); // easyButton ButtonÀ» btnsPanel¿¡ Ã·°¡
 		btnsPanel.add(refreshButton);
 
 		reButton.setVisible(false);
@@ -90,16 +90,16 @@ public class CardTable extends JFrame {
 
 		///// MENU BAR /////
 
-		JMenuBar mb = new JMenuBar(); // ë©”ë‰´ë°” ìƒì„±
-		JMenu fileMenu = new JMenu("File"); // File ì´ë¼ëŠ” ì´ë¦„ì˜ ë©”ë‰´ ìƒì„±
-		JMenu optionMenu = new JMenu("Option"); // Option ì´ë¼ëŠ” ì´ë¦„ì˜ ë©”ë‰´ ìƒì„±
+		JMenuBar mb = new JMenuBar(); // ¸Ş´º¹Ù »ı¼º
+		JMenu fileMenu = new JMenu("File"); // File ÀÌ¶ó´Â ÀÌ¸§ÀÇ ¸Ş´º »ı¼º
+		JMenu optionMenu = new JMenu("Option"); // Option ÀÌ¶ó´Â ÀÌ¸§ÀÇ ¸Ş´º »ı¼º
 		mb.add(fileMenu);
 		mb.add(optionMenu);
-		this.setJMenuBar(mb); // Main Frameì— ë©”ë‰´ë°” ë¶™ì„
+		this.setJMenuBar(mb); // Main Frame¿¡ ¸Ş´º¹Ù ºÙÀÓ
 		fileMenu.add(openVocabulary);
-		fileMenu.add(new JMenuItem("ë‹¨ì–´ì¥ ë‹¨ì–´ ì¶”ê°€"));
+		fileMenu.add(new JMenuItem("´Ü¾îÀå ´Ü¾î Ãß°¡"));
 		optionMenu.add(swapLines);
-		optionMenu.add("ìˆ™ë ¨ë„ ì´ˆê¸°í™”");
+		optionMenu.add("¼÷·Ãµµ ÃÊ±âÈ­");
 		optionMenu.add(learnMode);
 
 	}
@@ -113,15 +113,15 @@ public class CardTable extends JFrame {
 	}
 
 	public void changeCount1(int num1, int num2) {
-		count1.setText("í˜„ì¬: " + num1 + "/" + num2);
+		count1.setText("ÇöÀç: " + num1 + "/" + num2);
 	}
 
 	public void changeCount2(int num1, int num2) {
-		count2.setText("ì „ì±„: " + num1 + "/" + num2);
+		count2.setText("ÀüÃ¤: " + num1 + "/" + num2);
 	}
 
 	public void changeCount3(int num1) {
-		count3.setText("ì—°ì†: " + num1);
+		count3.setText("¿¬¼Ó: " + num1);
 	}
 
 	public void changeEachLine() {

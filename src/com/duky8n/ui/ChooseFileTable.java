@@ -11,7 +11,7 @@ public class ChooseFileTable extends JFrame {
 	
 	///// BUTTONS /////
 	
-	public JButton enterPathButton = new JButton("íŒŒì¼ ê²½ë¡œ ì…ë ¥");
+	public JButton enterPathButton = new JButton("ÆÄÀÏ °æ·Î ÀÔ·Â");
 	
 	///// TEXTFIELD /////
 	
@@ -21,9 +21,9 @@ public class ChooseFileTable extends JFrame {
 
 		///// FRAME SETTING /////
 
-		this.setTitle("FlashCard"); // frame ì œëª©
+		this.setTitle("FlashCard"); // frame Á¦¸ñ
 		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		this.setVisible(true); // frameì„ ë³´ì—¬ì¤„ì§€ì˜ ì—¬ë¶€
+		this.setVisible(true); // frameÀ» º¸¿©ÁÙÁöÀÇ ¿©ºÎ
 		this.setSize(450, 100); // frame size
 		this.setResizable(false);
 		this.setLayout(new GridLayout(2, 0));
