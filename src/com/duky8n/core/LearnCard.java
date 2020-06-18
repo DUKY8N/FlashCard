@@ -12,67 +12,81 @@ public class LearnCard extends Thread {
 
 	public LearnCard() {
 		cardTable.hideLearnButton();
-		this.cardTable.checkAnswerButton.addActionListener( new ActionListener() {
+		this.cardTable.checkAnswerButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				cardTable.hideAnswerCheckButton();
-				cardTable.showLearnButton();
-				cardTable.showLine2();
+					cardTable.hideAnswerCheckButton();
+					cardTable.showLine2();
+				if (wordDB.studyingFirstWord.size() > 0) {
+					cardTable.showLearnButton();
+				}
 			}
 		});
 
-		this.cardTable.reButton.addActionListener( new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				cardTable.showAnswerCheckButton();
-				cardTable.hideLearnButton();
-				cardTable.hideLine2();
-				wordDB.nextWord();
-				cardTable.changeLine1(wordDB.getLine1());
-				cardTable.changeLine2(wordDB.getLine2());
-			}
-		});
-
-		this.cardTable.rightButton.addActionListener( new ActionListener() {
+		this.cardTable.reButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				cardTable.showAnswerCheckButton();
 				cardTable.hideLearnButton();
 				cardTable.hideLine2();
-				wordDB.nextWord();
-				cardTable.changeLine1(wordDB.getLine1());
-				cardTable.changeLine2(wordDB.getLine2());
-				cardTable.changeCount2(wordDB.count+1, WordDB.wordNum);
+				wordDB.reStudy();
+				wordDB.chooseWord();
+				cardTable.changeLine1(wordDB.getStudyingLine1());
+				cardTable.changeLine2(wordDB.getStudyingLine2());
+				cardTable.changeCount3(wordDB.proficiencyLevel.get(wordDB.randomNum));
 			}
 		});
 
-		this.cardTable.easyButton.addActionListener( new ActionListener() {
+		this.cardTable.rightButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				cardTable.showAnswerCheckButton();
 				cardTable.hideLearnButton();
 				cardTable.hideLine2();
-				wordDB.nextWord();
-				cardTable.changeLine1(wordDB.getLine1());
-				cardTable.changeLine2(wordDB.getLine2());
+				wordDB.studied();
+				wordDB.removeAlreadyKnow();
+				wordDB.chooseWord();
+				cardTable.changeLine1(wordDB.getStudyingLine1());
+				cardTable.changeLine2(wordDB.getStudyingLine2());
+				cardTable.changeCount1(wordDB.toStudyFirstWord.size() + wordDB.studyingFirstWord.size());
+				cardTable.changeCount2(wordDB.studiedFirstWord.size(), WordDB.wordNum);
+				cardTable.changeCount3(wordDB.proficiencyLevel.get(wordDB.randomNum));
 			}
 		});
-		
-		this.cardTable.swapLines.addActionListener( new ActionListener() {
+
+		this.cardTable.easyButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				cardTable.showAnswerCheckButton();
+				cardTable.hideLearnButton();
+				cardTable.hideLine2();
+				wordDB.perfectlyStudied();
+				wordDB.removeAlreadyKnow();
+				wordDB.chooseWord();
+				cardTable.changeLine1(wordDB.getStudyingLine1());
+				cardTable.changeLine2(wordDB.getStudyingLine2());
+				cardTable.changeCount1(wordDB.toStudyFirstWord.size() + wordDB.studyingFirstWord.size());
+				cardTable.changeCount2(wordDB.studiedFirstWord.size(), WordDB.wordNum);
+				cardTable.changeCount3(wordDB.proficiencyLevel.get(wordDB.randomNum));
+			}
+		});
+
+		this.cardTable.swapLines.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				cardTable.changeEachLine();
-				
+				wordDB.changeEachLine();
+
 			}
-		
+
 		});
 
-		this.cardTable.openVocabulary.addActionListener( new ActionListener() {
+		this.cardTable.openVocabulary.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -83,34 +97,39 @@ public class LearnCard extends Thread {
 				cardTable.reButton.setVisible(false);
 				cardTable.rightButton.setVisible(false);
 				cardTable.easyButton.setVisible(false);
-				
+
 			}
-		
+
 		});
-		
-		this.cardTable.learnMode.addActionListener( new ActionListener() {
+
+		this.cardTable.learnMode.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				new PracticeMode();
-				
+
 			}
-		
+
 		});
 
-		this.cardTable.refreshButton.addActionListener( new ActionListener() {
+		this.cardTable.refreshButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				cardTable.changeLine1(wordDB.getLine1());
-				cardTable.changeLine2(wordDB.getLine2());
+				wordDB.reset();
+				wordDB.fillWord();
+				wordDB.readyToStudy();
+				wordDB.chooseWord();
+				cardTable.changeLine1(wordDB.getStudyingLine1());
+				cardTable.changeLine2(wordDB.getStudyingLine2());
 				cardTable.hideLine2();
 				cardTable.hideLearnButton();
 				cardTable.showAnswerCheckButton();
 				cardTable.refreshButton.setVisible(false);
-				cardTable.changeCount2(wordDB.count+1, WordDB.wordNum);
+				cardTable.changeCount1(wordDB.toStudyFirstWord.size() + wordDB.studyingFirstWord.size());
+				cardTable.changeCount2(wordDB.studiedFirstWord.size(), WordDB.wordNum);
 			}
-		
+
 		});
 	}
 

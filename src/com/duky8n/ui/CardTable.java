@@ -112,8 +112,8 @@ public class CardTable extends JFrame {
 		line2.setText(word);
 	}
 
-	public void changeCount1(int num1, int num2) {
-		count1.setText("현재: " + num1 + "/" + num2);
+	public void changeCount1(int num1) {
+		count1.setText("남은 단어: " + num1);
 	}
 
 	public void changeCount2(int num1, int num2) {

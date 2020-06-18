@@ -38,7 +38,6 @@ public class ReadFile {
 
 						WordDB.firstWord.add(line.substring(0, idx));
 						WordDB.secondWord.add(line.substring(idx + 1));
-						WordDB.correctNum.add(0);
 						WordDB.wordNum++;
 
 						line = reader.readLine();
