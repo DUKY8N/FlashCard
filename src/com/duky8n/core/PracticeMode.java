@@ -12,6 +12,7 @@ public class PracticeMode {
 	PracticeMode() {
 		practiceTable.changeLine1(wordDB.getLine1());
 		practiceTable.changeLine2(wordDB.getLine2());
+		practiceTable.changeCount(wordDB.count+1, WordDB.wordNum);
 
 		this.practiceTable.nextButton.addActionListener( new ActionListener() {
 
@@ -33,6 +34,7 @@ public class PracticeMode {
 				wordDB.beforWord();;
 				practiceTable.changeLine1(wordDB.getLine1());
 				practiceTable.changeLine2(wordDB.getLine2());
+				practiceTable.changeCount(wordDB.count+1, WordDB.wordNum);
 				
 			}
 		

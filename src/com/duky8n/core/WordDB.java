@@ -58,13 +58,17 @@ public class WordDB {
 	public void chooseWord() {
 		Random random = new Random();
 		if (studyingFirstWord.size() > 0) {
-			this.randomNum = random.nextInt(studyingFirstWord.size());
+			int temp = random.nextInt(studyingFirstWord.size());
+			if (studyingFirstWord.size() > 2) {
+				while (temp == this.randomNum) temp = random.nextInt(studyingFirstWord.size());
+			}
+			this.randomNum = temp;
 		}
 
 	}
 
 	public String getStudyingLine1() {
-		if(studyingFirstWord.size() > 0) {
+		if (studyingFirstWord.size() > 0) {
 			return studyingFirstWord.get(randomNum);
 		} else {
 			return "수고하셨습니다";
@@ -72,7 +76,7 @@ public class WordDB {
 	}
 
 	public String getStudyingLine2() {
-		if(studyingSecondWord.size() > 0) {
+		if (studyingSecondWord.size() > 0) {
 			return studyingSecondWord.get(randomNum);
 		} else {
 			return "모든 단어를 공부하셨습니다";
@@ -102,7 +106,7 @@ public class WordDB {
 			this.proficiencyLevel.remove(randomNum);
 		}
 	}
-	
+
 	public void changeEachLine() {
 		ArrayList<String> temp = new ArrayList<String>();
 		temp.addAll(toStudyFirstWord);
@@ -110,14 +114,14 @@ public class WordDB {
 		this.toStudyFirstWord.addAll(toStudySecondWord);
 		this.toStudySecondWord.clear();
 		this.toStudySecondWord.addAll(temp);
-		
+
 		temp.clear();
 		temp.addAll(studyingFirstWord);
 		this.studyingFirstWord.clear();
 		this.studyingFirstWord.addAll(studyingSecondWord);
 		this.studyingSecondWord.clear();
 		this.studyingSecondWord.addAll(temp);
-		
+
 		temp.clear();
 		temp.addAll(studiedFirstWord);
 		this.studiedFirstWord.clear();
@@ -125,12 +129,12 @@ public class WordDB {
 		this.studiedSecondWord.clear();
 		this.studiedSecondWord.addAll(temp);
 	}
-	
+
 	public void fillWord() {
 		this.toStudyFirstWord.addAll(firstWord);
 		this.toStudySecondWord.addAll(secondWord);
 	}
-	
+
 	public void reset() {
 		this.toStudyFirstWord.clear();
 		this.toStudySecondWord.clear();

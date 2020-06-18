@@ -131,6 +131,26 @@ public class LearnCard extends Thread {
 			}
 
 		});
+
+		this.cardTable.reset.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				wordDB.reset();
+				wordDB.fillWord();
+				wordDB.readyToStudy();
+				wordDB.chooseWord();
+				cardTable.changeLine1(wordDB.getStudyingLine1());
+				cardTable.changeLine2(wordDB.getStudyingLine2());
+				cardTable.hideLine2();
+				cardTable.hideLearnButton();
+				cardTable.showAnswerCheckButton();
+				cardTable.refreshButton.setVisible(false);
+				cardTable.changeCount1(wordDB.toStudyFirstWord.size() + wordDB.studyingFirstWord.size());
+				cardTable.changeCount2(wordDB.studiedFirstWord.size(), WordDB.wordNum);
+			}
+
+		});
 	}
 
 }
