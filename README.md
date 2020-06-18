@@ -1,5 +1,5 @@
 # FlashCard
-<img src="/Users/imdeog-yun/eclipse-workspace/FlashCard/etc/스크린샷 2020-06-18 오후 10.55.10.png" alt="스크린샷 2020-06-18 오후 10.55.10" style="zoom: 33%;" /><img src="/Users/imdeog-yun/eclipse-workspace/FlashCard/etc/스크린샷 2020-06-18 오후 10.53.48.png" alt="스크린샷 2020-06-18 오후 10.53.48" style="zoom: 33%;" />
+<img src="https://raw.githubusercontent.com/DUKY8N/FlashCard/master/etc/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-06-18%20%EC%98%A4%ED%9B%84%2010.55.10.png" style="zoom: 33%;" /><img src="https://github.com/DUKY8N/FlashCard/blob/master/etc/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-06-18%20%EC%98%A4%ED%9B%84%2010.53.48.png" style="zoom: 33%;" />
 
 >  카드형태로 단어를 보면서 암기할 수 있는 프로그램
 
@@ -19,18 +19,18 @@
 
 ### 단어 추가
 
-<img src="/Users/imdeog-yun/eclipse-workspace/FlashCard/etc/스크린샷 2020-06-18 오후 11.11.56.png" alt="스크린샷 2020-06-18 오후 11.11.56" style="zoom: 50%;" />
+<img src="https://raw.githubusercontent.com/DUKY8N/FlashCard/master/etc/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-06-18%20%EC%98%A4%ED%9B%84%2011.10.41.png" style="zoom: 50%;" />
 
 > 학습 도중에 단어를 추가할 수 있음
 
 ### 위, 아래 바꾸기
 
-<img src="/Users/imdeog-yun/eclipse-workspace/FlashCard/etc/스크린샷 2020-06-18 오후 11.13.04.png" alt="스크린샷 2020-06-18 오후 11.13.28" style="zoom:33%;" /><img src="/Users/imdeog-yun/eclipse-workspace/FlashCard/etc/스크린샷 2020-06-18 오후 11.13.28.png" alt="스크린샷 2020-06-18 오후 11.13.28" style="zoom:33%;" />
+<img src="https://raw.githubusercontent.com/DUKY8N/FlashCard/master/etc/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-06-18%20%EC%98%A4%ED%9B%84%2011.13.04.png" style="zoom:33%;" /><img src="https://raw.githubusercontent.com/DUKY8N/FlashCard/master/etc/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-06-18%20%EC%98%A4%ED%9B%84%2011.13.28.png" style="zoom:33%;" />
 
 > 학습 도중에 단어와 뜻을 바꿀 수 있음
 
 ### 연습 모드
 
-<img src="/Users/imdeog-yun/eclipse-workspace/FlashCard/etc/스크린샷 2020-06-18 오후 11.15.27.png" alt="스크린샷 2020-06-18 오후 11.15.27" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/DUKY8N/FlashCard/master/etc/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202020-06-18%20%EC%98%A4%ED%9B%84%2011.15.27.png" style="zoom:50%;" />
 
 > 단어를 훑어볼 수 있는 연습 모드
