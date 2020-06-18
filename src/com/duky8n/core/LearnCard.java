@@ -3,6 +3,7 @@ package com.duky8n.core;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import com.duky8n.ui.AddWord;
 import com.duky8n.ui.CardTable;
 
 public class LearnCard extends Thread {
@@ -16,8 +17,8 @@ public class LearnCard extends Thread {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-					cardTable.hideAnswerCheckButton();
-					cardTable.showLine2();
+				cardTable.hideAnswerCheckButton();
+				cardTable.showLine2();
 				if (wordDB.studyingFirstWord.size() > 0) {
 					cardTable.showLearnButton();
 				}
@@ -32,6 +33,7 @@ public class LearnCard extends Thread {
 				cardTable.hideLearnButton();
 				cardTable.hideLine2();
 				wordDB.reStudy();
+				wordDB.readyToStudy();
 				wordDB.chooseWord();
 				cardTable.changeLine1(wordDB.getStudyingLine1());
 				cardTable.changeLine2(wordDB.getStudyingLine2());
@@ -48,6 +50,7 @@ public class LearnCard extends Thread {
 				cardTable.hideLine2();
 				wordDB.studied();
 				wordDB.removeAlreadyKnow();
+				wordDB.readyToStudy();
 				wordDB.chooseWord();
 				cardTable.changeLine1(wordDB.getStudyingLine1());
 				cardTable.changeLine2(wordDB.getStudyingLine2());
@@ -66,6 +69,7 @@ public class LearnCard extends Thread {
 				cardTable.hideLine2();
 				wordDB.perfectlyStudied();
 				wordDB.removeAlreadyKnow();
+				wordDB.readyToStudy();
 				wordDB.chooseWord();
 				cardTable.changeLine1(wordDB.getStudyingLine1());
 				cardTable.changeLine2(wordDB.getStudyingLine2());
@@ -151,6 +155,32 @@ public class LearnCard extends Thread {
 			}
 
 		});
+
+		this.cardTable.addWord.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				AddWord addWord = new AddWord();
+				addWord.enterButton.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						WordDB.firstWord.add(addWord.line1.getText());
+						WordDB.secondWord.add(addWord.line2.getText());
+						WordDB.wordNum++;
+						wordDB.toStudyFirstWord.add(addWord.line1.getText());
+						wordDB.toStudySecondWord.add(addWord.line2.getText());
+						addWord.line1.setText("");
+						addWord.line2.setText("");
+
+					}
+
+				});
+
+			}
+
+		});
+
 	}
 
 }

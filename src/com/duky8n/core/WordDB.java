@@ -19,7 +19,7 @@ public class WordDB {
 	public ArrayList<String> studiedFirstWord = new ArrayList<String>();
 	public ArrayList<String> studiedSecondWord = new ArrayList<String>();
 
-	int count = 0;
+	public int count = 0;
 	int randomNum = 0;
 
 	WordDB() {

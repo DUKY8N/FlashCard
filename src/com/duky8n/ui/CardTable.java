@@ -28,6 +28,8 @@ public class CardTable extends JFrame {
 	public JMenuItem openVocabulary = new JMenuItem("단어장 열기");
 	public JMenuItem learnMode = new JMenuItem("연습 모드");
 	public JMenuItem reset = new JMenuItem("숙련도 초기화");
+	public JMenuItem addWord = new JMenuItem("단어 추가");
+
 	public CardTable() {
 
 		///// FRAME SETTING /////
@@ -97,7 +99,7 @@ public class CardTable extends JFrame {
 		mb.add(optionMenu);
 		this.setJMenuBar(mb); // Main Frame에 메뉴바 붙임
 		fileMenu.add(openVocabulary);
-		fileMenu.add(new JMenuItem("단어장 단어 추가"));
+		fileMenu.add(addWord);
 		optionMenu.add(swapLines);
 		optionMenu.add(reset);
 		optionMenu.add(learnMode);
