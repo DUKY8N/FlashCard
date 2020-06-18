@@ -23,7 +23,7 @@ public class AddWord extends JFrame {
 	
 	///// IMAGE /////
 
-	ImageIcon icon = new ImageIcon("door.svg");
+	ImageIcon icon = new ImageIcon("images/door.png");
 
 	public AddWord() {
 

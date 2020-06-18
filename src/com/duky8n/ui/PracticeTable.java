@@ -19,7 +19,7 @@ public class PracticeTable extends JFrame {
 	
 	///// IMAGE /////
 	
-	ImageIcon icon = new ImageIcon("school.svg");
+	ImageIcon icon = new ImageIcon("images/school.png");
 
 	public PracticeTable() {
 

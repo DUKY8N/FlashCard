@@ -32,7 +32,7 @@ public class CardTable extends JFrame {
 	
 	///// IMAGE /////
 
-	ImageIcon icon = new ImageIcon("cat.svg");
+	ImageIcon icon = new ImageIcon("images/cat.png");
 
 	public CardTable() {
 

@@ -20,7 +20,7 @@ public class ChooseFileTable extends JFrame {
 
 	///// IMAGE /////
 	
-	ImageIcon icon = new ImageIcon("product.svg");
+	ImageIcon icon = new ImageIcon("images/product.png");
 	
 	public ChooseFileTable() {
 
