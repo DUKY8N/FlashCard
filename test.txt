@@ -1,4 +1,0 @@
-hello:안녕하세요
-world:세상
-haha:하하
-water:물

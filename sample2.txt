@@ -1,0 +1,4 @@
+hi:안녕
+new:새로운
+news:뉴스
+human:인간
