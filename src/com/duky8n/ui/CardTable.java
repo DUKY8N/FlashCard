@@ -29,6 +29,10 @@ public class CardTable extends JFrame {
 	public JMenuItem learnMode = new JMenuItem("연습 모드");
 	public JMenuItem reset = new JMenuItem("숙련도 초기화");
 	public JMenuItem addWord = new JMenuItem("단어 추가");
+	
+	///// IMAGE /////
+
+	ImageIcon icon = new ImageIcon("cat.svg");
 
 	public CardTable() {
 
@@ -38,6 +42,7 @@ public class CardTable extends JFrame {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // X 버튼을 누를시 프로세스 종료
 		this.setVisible(true); // frame을 보여줄지의 여부
 		this.setSize(450, 300); // frame size
+		this.setIconImage(icon.getImage());
 
 		///// PANELS /////
 

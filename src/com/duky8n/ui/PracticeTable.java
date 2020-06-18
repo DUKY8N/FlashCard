@@ -16,6 +16,10 @@ public class PracticeTable extends JFrame {
 
 	public JButton backButton = new JButton("이전");
 	public JButton nextButton = new JButton("다음");
+	
+	///// IMAGE /////
+	
+	ImageIcon icon = new ImageIcon("school.svg");
 
 	public PracticeTable() {
 
@@ -25,6 +29,7 @@ public class PracticeTable extends JFrame {
 		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		this.setVisible(true); // frame을 보여줄지의 여부
 		this.setSize(450, 200); // frame size
+		this.setIconImage(icon.getImage());
 
 		///// PANELS /////
 

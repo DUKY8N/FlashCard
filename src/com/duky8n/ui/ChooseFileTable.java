@@ -2,6 +2,7 @@ package com.duky8n.ui;
 
 import java.awt.GridLayout;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -17,6 +18,10 @@ public class ChooseFileTable extends JFrame {
 	
 	public JTextField pathTextField = new JTextField();
 
+	///// IMAGE /////
+	
+	ImageIcon icon = new ImageIcon("product.svg");
+	
 	public ChooseFileTable() {
 
 		///// FRAME SETTING /////
@@ -25,6 +30,7 @@ public class ChooseFileTable extends JFrame {
 		this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 		this.setVisible(true); // frame을 보여줄지의 여부
 		this.setSize(450, 100); // frame size
+		this.setIconImage(icon.getImage());
 		this.setResizable(false);
 		this.setLayout(new GridLayout(2, 0));
 		
